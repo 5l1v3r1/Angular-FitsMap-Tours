@@ -25,21 +25,16 @@
 <div class="container main">
   <div class="row">
     <div class="col-xs-6">
-      <div class="form">
-        <form (submit)='addMarker()'>
-          <label>Stop Name</label>
-          <input type="text" [(ngModel)]='markerName' name='markerName'>
-          <label>Stop Lat</label>
-          <input type="text" [(ngModel)]='markerLat' name='markerLat'>
-          <label>Stop Lon</label>
-          <input type="text" [(ngModel)]='markerLng' name='markerLng'>
-          <label>Draggable</label>
-          <select [(ngModel)]='markerDraggable' name='markerDraggable'>
-            <option value="no">No</option>
-            <option value="yes">Yes</option>
-          </select>
-          <input type="submit" value="Add Stop">
-        </form>
+      <div class="well">
+        <h2>Welcome to FitsMap Tour Builder!</h2>
+        <p>Suggested stops, like the infamous Pike Market and the iconic Space Needle, have been placed on the map already. </p>
+        <p>To add a stop, just click on the map. You can grab your markers and move them where ever you like!</p>
+        <p><strong>Once you have built your tour, click the button below to send.</strong></p>
+        <button (click)="makePolyline()" name="button">Send Tour</button>
+        <div *ngIf="tourFinished" class="well">
+          <h3>Your Tour:</h3>
+          <h5 *ngFor='let stop of tourFinished'>{{stop}}</h5>
+        </div>
       </div>
     </div>
     <div class="col-xs-6">
@@ -51,6 +46,10 @@
           [disableDefaultUI]=false
           [zoomControl]=false
           (mapClick)="mapClicked($event)">
+          <agm-polyline
+            path='myCoordinates'>
+
+          </agm-polyline>
           <agm-marker
             *ngFor='let m of markers; let i = index'
             (markerClick)="clickedMarker(m, i)"

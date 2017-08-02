@@ -22,13 +22,29 @@ export class AppComponent {
   markerDraggable:string;
   //Markers
   markers: marker[];
-
+  //Polyline not working
+  myCoordinates = [];
+  //Form Switch
   changeName:string = null;
+  tourFinished:string[] = null;
 
   constructor(private _markerService:MarkerService){
     this.markers = this._markerService.getMarkers();
   }
 
+  makePolyline(){
+    var tourFinished = [];
+    var myCoordinates = [];
+    this.markers.forEach(function(marker){
+      myCoordinates.push({lat: marker.lat, lng: marker.lng})
+    });
+    this.markers.forEach(function(marker){
+      tourFinished.push(marker.name)
+    });
+    this.myCoordinates = myCoordinates;
+    this.tourFinished = tourFinished;
+    console.log(myCoordinates)
+  }
 
   doneNaming(){
     this.changeName = null;
