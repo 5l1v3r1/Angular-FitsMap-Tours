@@ -60,6 +60,12 @@
             (dragEnd)="markerDragEnd(m, $event)">
             <agm-info-window>
               <strong>{{m.name}}</strong>
+              <a class='rename' (click)='renameMarker(m)'>Rename Marker</a>
+              <br>
+              <div *ngIf="changeName" >
+                <input type="text"  class='nameWindow' [(ngModel)]='m.name'>
+                <a class="doneNaming" (click)='doneNaming()'>Done</a>
+              </div>
               <br>
               <a class='delete' (click)='removeMarker(m)'>Delete Marker</a>
             </agm-info-window>

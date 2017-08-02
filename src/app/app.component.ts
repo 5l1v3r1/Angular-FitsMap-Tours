@@ -22,9 +22,19 @@ export class AppComponent {
   markerDraggable:string;
   //Markers
   markers: marker[];
+
+  changeName:string = null;
+
   constructor(private _markerService:MarkerService){
     this.markers = this._markerService.getMarkers();
   }
+
+
+  doneNaming(){
+    this.changeName = null;
+  }
+
+
 
   clickedMarker(marker:marker, index:number){
     console.log('Clicked Marker:' + marker.name+"at index" +index)
@@ -38,11 +48,10 @@ export class AppComponent {
       draggable: true
     }
     this.markers.push(newMarker)
-    console.log(this.markers.indexOf(newMarker))
+    this._markerService.addMarker(newMarker);
+
   }
   markerDragEnd(marker:any, $event:any){
-    console.log('dragEnd', marker, $event);
-
     var updMarker = {
       name: marker.name,
       lat: parseFloat(marker.lat),
@@ -78,6 +87,17 @@ export class AppComponent {
       }
     }
     this._markerService.removeMarker(marker);
+  }
+
+  renameMarker(marker){
+    this.changeName = marker;
+    for(var i = 0; i < this.markers.length; i++){
+      if(marker.lat == this.markers[i].lat && marker.lng == this.markers[i].lng){
+        this.markers[i].name = marker.name;
+      }
+    }
+    this._markerService.renameMarker(marker);
+
   }
 }
 
