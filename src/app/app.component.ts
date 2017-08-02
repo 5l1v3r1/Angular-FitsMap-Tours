@@ -32,6 +32,7 @@ export class AppComponent {
     this.markers = this._markerService.getMarkers();
   }
 
+
   makePolyline(){
     var tourFinished = [];
     var myCoordinates = [];
@@ -46,6 +47,9 @@ export class AppComponent {
     console.log(myCoordinates)
   }
 
+  resetTour(){
+    this.tourFinished = null;
+  }
   doneNaming(){
     this.changeName = null;
   }

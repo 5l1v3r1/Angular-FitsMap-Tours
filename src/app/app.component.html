@@ -10,10 +10,6 @@
       <a class="navbar-brand" href="#">FitsMap Tours</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="../navbar/">by Starlynne Start</a></li>
       </ul>
@@ -25,7 +21,7 @@
 <div class="container main">
   <div class="row">
     <div class="col-xs-6">
-      <div class="well">
+      <div class="tour well">
         <h2>Welcome to FitsMap Tour Builder!</h2>
         <p>Suggested stops, like the infamous Pike Market and the iconic Space Needle, have been placed on the map already. </p>
         <p>To add a stop, just click on the map. You can grab your markers and move them where ever you like!</p>
@@ -34,6 +30,7 @@
         <div *ngIf="tourFinished" class="well">
           <h3>Your Tour:</h3>
           <h5 *ngFor='let stop of tourFinished'>{{stop}}</h5>
+          <button (click)="resetTour()" name="button">Clear</button>
         </div>
       </div>
     </div>
