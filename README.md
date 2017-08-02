@@ -21,9 +21,6 @@ _A tour building app, 8-2-17_
 Copyright (c) 2017 **_Starlynne Start_**
 
 
-#### Planning
-_Planning and goals can be found in planning.txt_
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
