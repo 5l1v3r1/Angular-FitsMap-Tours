@@ -1,0 +1,9 @@
+.main{
+  margin-top: 5%;
+  clear: both;
+}
+agm-map {
+  height: 600px;
+  width: 600px;
+  float: right;
+}

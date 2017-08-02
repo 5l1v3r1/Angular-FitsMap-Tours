@@ -1,0 +1,20 @@
+{
+  "name": "fitsmap-tour",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Starlynne <lewis.start0905@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
