@@ -1,6 +1,28 @@
 # FitsmapTour
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.
+_A tour building app, 8-2-17_
+
+## Detailed Description
+
+  _This app was designed to let users build a tour using google maps. Some markers are pre-populated, but may be deleted. Users can add, name, and move their own stops. Finalizing the tour loads a list for the user and saves the coordinates._
+
+## Technologies Used
+
+* This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.
+
+* AGM (angular-google-maps)
+
+* Bootstrap
+
+### License
+
+*MIT*
+
+Copyright (c) 2017 **_Starlynne Start_**
+
+
+#### Planning
+_Planning and goals can be found in planning.txt_
 
 ## Development server
 
